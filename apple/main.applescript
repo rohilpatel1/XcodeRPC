@@ -1,3 +1,5 @@
 tell application "Xcode"
-    set currentWorkspacePath to path of active workspace document
+	tell active workspace document
+		return name
+	end tell
 end tell
