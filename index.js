@@ -16,23 +16,21 @@ let config = {
 
 let startTime = Date.now();
 
-/*
+
 function createWindow () {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 0,
+    height: 0,
     webPreferences: {
       nodeIntegration: true
     }
   });
   
-
   // and load the index.html of the app.
   win.loadFile('index.html')
 }
-
 app.whenReady().then(createWindow)
-*/
+
 
 
 function update() {

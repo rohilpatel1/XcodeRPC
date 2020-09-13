@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "electron .",
+    "start": "node index.js",
+    "build": "electron-packager . XcodeRPC"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "applescript": "^1.0.0",
-    "discord-rich-presence": "0.0.8"
+    "discord-rich-presence": "0.0.8",
+    "electron": "^10.1.1",
+    "electron-packager": "^15.1.0"
   }
 }
