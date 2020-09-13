@@ -1,4 +1,3 @@
 tell application "Xcode"
-    set CurrentActiveDocument to document 1 whose name ends with (word -1 of (get name of   window 1))
-    set WhatYouWant to path of CurrentActiveDocument
+    set currentWorkspacePath to path of active workspace document
 end tell

@@ -1,6 +1,7 @@
 const applescript = require('applescript');
-const script = require('./apple/main.applescript');
+const fs = require('fs');
 
+const script = fs.readFileSync('apple/main.applescript')
 
 applescript.execString(script, (err, rtn) => {
   if (err) {
