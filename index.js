@@ -50,11 +50,12 @@ function update() {
 		    
         var state = config.state.replace(/{file}/g, res);
         var details = config.details.replace(/{project}/g, workspace);
-        
+
+
         client.updatePresence({
-          state: config.showState ? !res ? 'No file open' : state : undefined,
-          details: config.showDetails ? !workspace ? 'No project open' : details : undefined,
-          startTimestamp: startTime,
+          state: config.showState ? !res ? undefined : state : undefined,
+          details: config.showDetails ? !workspace ? 'Idling' : details : undefined,
+          startTimestamp: !res ? undefined : startTime,
           largeImageKey: 'xcode',
           largeImageText: 'Editing in Xcode',
           smallImageKey: fileExtension ? fileExtension === '.swift' ? 'swift' : fileExtension === '.plist' ? 'plist' : 'unknown' : undefined,
