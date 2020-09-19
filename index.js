@@ -3,9 +3,14 @@ const fs = require('fs');
 const client = require('discord-rich-presence')('754460701522788550');
 const { app, BrowserWindow } = require('electron');
 
-let system = 'tell application "System Events" to (name of processes) contains "Xcode"';
-let getextension = 'tell application "Xcode" to get the name of the front window' 
-let getworkspace = 'tell application "Xcode" to get the name of the active workspace document'
+const appleScriptData = fs.readFileSync('main.applescript', 'utf8');
+const appleScriptLines = appleScriptData.split(/\r?\n/);
+
+console.log(appleScriptLines)
+
+let system = appleScriptLines[0];
+let getextension = appleScriptLines[1];
+let getworkspace = appleScriptLines[2];
 
 let config = {
   "details": "Workspace: {project}",
