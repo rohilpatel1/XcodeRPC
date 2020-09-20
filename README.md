@@ -1,8 +1,8 @@
 # XCODE RPC 
 
-Simply download the zip file below for macOS and accept all conditions. 
+Simply download the [zip](https://github.com/rohilpatel1/XcodeRPC/releases/) file below for the most recent release. Once downloaded, move the folder that was a zip from your downloads to your Desktop. 
 
-1. Open terminal and go to the directory of the file
+1. Open terminal and go to the directory of the file (remember to cd into desktop first!)
 2. Run `npm -v`, and if you see a version number, like *6.14.8*, then proceed. Otherwise go to [this link](https://nodejs.org/en/) and download Node.js
 3. Run `npm install` inside the terminal
 4. Run `npm run build` in the terminal
