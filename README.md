@@ -1,18 +1,9 @@
 # XCODE RPC 
 
+## Download Instructions
 Simply download the [zip](https://github.com/rohilpatel1/XcodeRPC/releases/) file below for the most recent release. Once downloaded, move the folder that was a zip from your downloads to your Desktop. 
 
-1. Open terminal and go to the directory of the file (remember to cd into desktop first!)
-2. Run `npm -v`, and if you see a version number, like *6.14.8*, then proceed. Otherwise go to [this link](https://nodejs.org/en/) and download Node.js
-3. Run `npm install` inside the terminal
-4. Run `npm run build` in the terminal
-5. If you see any error, run the following individually:
-   5a. `npm i applescript`
-   5b. `npm i electron`
-   5c. `npm i electron-packager`
-   5d. `npm i discord rich presence`
-6. Once complete, run `open .` in the terminal
-7. Click on XcodeRPC application, and accept all configurations to your computer. This allows the code to see what you are doing in Xcode.
+From there, click on XcodeRPC application, and accept all configurations to your computer. This allows the code to see what you are doing in Xcode.
 
 ## User agreement
 
