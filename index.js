@@ -20,7 +20,7 @@ let config = {
 let startTime = Date.now();
 
 
-function createWindow () {
+function createWindow() {
   const win = new BrowserWindow({
     width: 0,
     height: 0,
@@ -28,7 +28,7 @@ function createWindow () {
       nodeIntegration: true
     }
   });
-  
+
   // and load the index.html of the app.
   win.loadFile('index.html')
 }
@@ -36,21 +36,21 @@ app.whenReady().then(createWindow)
 
 
 
-function update() { //system
-	applescript.execString(linesArr[0], (err, res) => {
-	  
-		if (res == false) {
-			console.log('Xcode not open');
-			return;
-		}
-		
-		applescript.execString(linesArr[1], (err, res) => { //getextension
-		  applescript.execString(linesArr[2], (err, project) => {//getworkspace
-		    let workspace, fileExtension;
-		    
-		    if (project) workspace = project.replace('.xcodeproj', '');
-		    if (res) fileExtension = res.match(/\.(.+)/g) ? res.match(/\.(.+)/g)[0] : 'unknown';
-		    
+function update() {
+  applescript.execString(linesArr[0], (err, res) => {
+
+    if (res == false) {
+      console.log('Xcode not open');
+      return;
+    }
+
+    applescript.execString(linesArr[1], (err, res) => {
+      applescript.execString(linesArr[2], (err, project) => {
+        let workspace, fileExtension;
+
+        if (project) workspace = project.split('.')[0];
+        if (res) fileExtension = res.match(/\.(.+)/g) ? res.match(/\.(.+)/g)[0] : 'unknown';
+
         var state = config.state.replace(/{file}/g, res);
         var details = config.details.replace(/{project}/g, workspace);
 
@@ -65,10 +65,11 @@ function update() { //system
           smallImageText: fileExtension ? `Editing a ${fileExtension} file` : undefined,
           instance: true,
         });
-		  });
-		});
-	});
+      });
+    });
+  });
 };
+
 update();
 
 setInterval(update, 1000);
